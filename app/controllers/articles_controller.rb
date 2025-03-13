@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
             #returns validation errors if any occurs
             render json: @article.errors, status: :unprocessable_entity
         else
-            saves the article and returns appropriate response
+            #saves the article and returns appropriate response
             if @article.save
                 render json: @article, status: :created
             else
@@ -61,7 +61,7 @@ class ArticlesController < ApplicationController
         params.require(:article).permit(:title, :content, :author, :category, :published_at)
     end
 
-    restricts updating and deletion of articles
+    #restricts updating and deletion of articles
     def do_not_modify
         render json: {error: "Modifying or deleting articles is now alowed as it is public API"}, status: :method_not_allowed
     end
