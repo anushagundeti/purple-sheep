@@ -43,8 +43,11 @@ Description: Retrieve a single article by its ID
 
 Response: JSON object of the article or 404 Not Found if the ID doesn't exist
 
-PUT /articles/<id>
-PATCH /articles/<id>
-DELETE /articles/<id>
-Response: 405 Method Not Allowed
-This public API does not allow editing or deleting articles.
+### `PUT /articles/<id>`  
+### `PATCH /articles/<id>`  
+### `DELETE /articles/<id>`
+
+- **Description**: These operations are not allowed on this API.
+- **Response**:
+  - `405 Method Not Allowed`
+  - This public API **does not support editing or deleting articles**.
